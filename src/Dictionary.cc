@@ -1,5 +1,6 @@
 ﻿#include "stdafx.h"
 #include <fstream>
+#include <stdio.h>
 
 #include "Dictionary.h"
 #include "StringUtil.h"
@@ -104,6 +105,15 @@ void Dictionary::loadDict(string dictPath)
 		lineNum += 1;
 
 	}
+
+    // todo 添加数字 
+    for(int ii=0; ii<100001; ii++)
+    {
+        char tmp[1024] = {0};
+        snprintf(tmp,1024,"%d",ii);
+        string key = tmp; 
+        coreDict.insert(make_pair(key, 1));
+    }
 
 	fclose(fp);
 }
