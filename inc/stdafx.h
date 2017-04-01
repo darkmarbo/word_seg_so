@@ -20,5 +20,9 @@
 
 using namespace std;
 
+#if _MSC_VER
+#define snprintf _snprintf
+#endif
+
 
 // TODO: 在此处引用程序需要的其他头文件
